@@ -138,6 +138,20 @@
 				<div class="col-lg-4 col-sm-6 mb-4">
 					<div class="portfolio-item">
 						<a class="portfolio-link" data-toggle="modal" data-target="#portfolioModal"
+							data-img-src="img/portfolio/clinic_pro.png" data-title="Clinic Management System (Demo App)"
+							data-demo-link="https://cms-react-main.laravel.cloud/" data-username="admin@email.com"
+							data-password="password">
+							<img class="img-fluid" src="img/portfolio/clinic_pro.png" alt="RMIS" />
+						</a>
+						<div class="portfolio-caption">
+							<div class="portfolio-caption-heading">Clinic Management System (Demo App)</div>
+							<!-- <div class="portfolio-caption-subheading text-muted">Click for demo</div> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-6 mb-4">
+					<div class="portfolio-item">
+						<a class="portfolio-link" data-toggle="modal" data-target="#portfolioModal"
 							data-img-src="img/portfolio/rmis.jpg" data-title="Rice Mill Information System">
 							<img class="img-fluid" src="img/portfolio/rmis.jpg" alt="RMIS" />
 						</a>
@@ -345,12 +359,14 @@
 				var imgSrc = $(this).data('img-src');
 				var title = $(this).data('title');
 				var demoLink = $(this).data('demo-link');
+				var username = $(this).data('username');
+				var password = $(this).data('password');
 
 				$('#portfolioModalTitle').text(title);
 				$('#portfolioModalImage').attr('src', imgSrc).attr('alt', title);
 
 				if (demoLink) {
-					$('#portfolioModalLink').html('<a href="' + demoLink + '" target="_blank">View Live Demo</a>');
+					$('#portfolioModalLink').html('<a href="' + demoLink + '" target="_blank">View Live Demo</a> <p>Credentials <br/> username: ' + username + ' <br/> password: ' + password + '</p>');
 				} else {
 					$('#portfolioModalLink').html('');
 				}
