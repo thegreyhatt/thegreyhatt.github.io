@@ -11,16 +11,27 @@
 		gtag('config', 'UA-115878304-7');
 	</script>
 
+	<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/service-worker.js');
+		}
+	</script>
+
+	<script src="https://adsynapse.test/api/push-popup/embed?uid=eyJpdiI6ImU4YVJVSGIwZXBHQTlyRTQrWU1vSlE9PSIsInZhbHVlIjoibjIwMkROSGVUbUZhdC9ZdUYxOUZtT2toWWMwZEZHOVNQSXFqeUpla2dKZ3RFZ1hQRDhOdFV1V2ZIMWVIY01oSzN1TDhLMEM4U2RJQm9sVlB6Umt5RHM2NXA0RGw1RUJzeWx6dDk2d2NSZ1hNbkl2V0owVm1YVEdsb3NnbU02WG8iLCJtYWMiOiI3MzkxYWVmMmJiNzFkMGNjNDBmZWEwZGE2NWJkNDE2YThkYmFjYTNhYzljZjRiZjUxMjIxNWMwZjk5OTAyZmU3IiwidGFnIjoiIn0%3D"></script>
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Ervin Beñez — web developer and graphic artist from the Philippines. I build reliable web apps, cloud infrastructure, and clean visual design.">
+	<meta name="description"
+		content="Ervin Beñez — web developer and graphic artist from the Philippines. I build reliable web apps, cloud infrastructure, and clean visual design.">
 	<meta name="author" content="Ervin Beñez">
 
 	<title>Ervin Beñez | Online Portfolio</title>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+		rel="stylesheet">
 
 	<style>
 		:root {
@@ -35,7 +46,9 @@
 			--maxw: 1080px;
 		}
 
-		* { box-sizing: border-box; }
+		* {
+			box-sizing: border-box;
+		}
 
 		html {
 			scroll-behavior: smooth;
@@ -52,8 +65,15 @@
 			-webkit-font-smoothing: antialiased;
 		}
 
-		a { color: var(--phosphor); text-decoration: none; }
-		a:hover { text-decoration: underline; text-underline-offset: 3px; }
+		a {
+			color: var(--phosphor);
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+			text-underline-offset: 3px;
+		}
 
 		:focus-visible {
 			outline: 2px solid var(--phosphor);
@@ -61,7 +81,10 @@
 			border-radius: 2px;
 		}
 
-		img { max-width: 100%; display: block; }
+		img {
+			max-width: 100%;
+			display: block;
+		}
 
 		.wrap {
 			max-width: var(--maxw);
@@ -94,9 +117,18 @@
 			color: var(--paper);
 			white-space: nowrap;
 		}
-		.brand:hover { text-decoration: none; }
-		.brand .host { color: var(--fog); }
-		.brand .sigil { color: var(--phosphor); }
+
+		.brand:hover {
+			text-decoration: none;
+		}
+
+		.brand .host {
+			color: var(--fog);
+		}
+
+		.brand .sigil {
+			color: var(--phosphor);
+		}
 
 		.site-nav ul {
 			display: flex;
@@ -111,7 +143,11 @@
 			font-size: 0.85rem;
 			color: var(--fog);
 		}
-		.site-nav ul a:hover { color: var(--paper); text-decoration: none; }
+
+		.site-nav ul a:hover {
+			color: var(--paper);
+			text-decoration: none;
+		}
 
 		/* ---------- Hero terminal ---------- */
 		.hero {
@@ -124,8 +160,14 @@
 			color: var(--fog);
 			margin: 0 0 1.4rem;
 		}
-		.term-line .prompt { color: var(--phosphor); }
-		.term-line .cmd { color: var(--paper); }
+
+		.term-line .prompt {
+			color: var(--phosphor);
+		}
+
+		.term-line .cmd {
+			color: var(--paper);
+		}
 
 		.cursor {
 			display: inline-block;
@@ -136,7 +178,11 @@
 			animation: blink 1.1s steps(1) infinite;
 		}
 
-		@keyframes blink { 50% { opacity: 0; } }
+		@keyframes blink {
+			50% {
+				opacity: 0;
+			}
+		}
 
 		.hero h1 {
 			font-family: var(--mono);
@@ -148,7 +194,9 @@
 			max-width: 18ch;
 		}
 
-		.hero h1 .accent { color: var(--phosphor); }
+		.hero h1 .accent {
+			color: var(--phosphor);
+		}
 
 		.hero .lede {
 			max-width: 52ch;
@@ -156,18 +204,35 @@
 			margin: 0 0 2.2rem;
 		}
 
-		.hero-output { opacity: 1; }
-		.hero-output.pending { opacity: 0; }
+		.hero-output {
+			opacity: 1;
+		}
+
+		.hero-output.pending {
+			opacity: 0;
+		}
+
 		.hero-output.reveal {
 			animation: rise 0.6s ease-out both;
 		}
 
 		@keyframes rise {
-			from { opacity: 0; transform: translateY(10px); }
-			to { opacity: 1; transform: none; }
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+
+			to {
+				opacity: 1;
+				transform: none;
+			}
 		}
 
-		.btn-row { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+		.btn-row {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.9rem;
+		}
 
 		.btn {
 			font-family: var(--mono);
@@ -178,18 +243,26 @@
 			color: var(--paper);
 			transition: border-color 0.15s ease, background 0.15s ease;
 		}
-		.btn:hover { text-decoration: none; border-color: var(--fog); }
+
+		.btn:hover {
+			text-decoration: none;
+			border-color: var(--fog);
+		}
+
 		.btn-primary {
 			border-color: var(--phosphor);
 			color: var(--phosphor);
 		}
+
 		.btn-primary:hover {
 			background: color-mix(in srgb, var(--phosphor) 12%, transparent);
 			border-color: var(--phosphor);
 		}
 
 		/* ---------- Sections ---------- */
-		section { padding: 4.5rem 0; }
+		section {
+			padding: 4.5rem 0;
+		}
 
 		.eyebrow {
 			font-family: var(--mono);
@@ -197,7 +270,10 @@
 			color: var(--fog);
 			margin: 0 0 0.5rem;
 		}
-		.eyebrow .prompt { color: var(--phosphor); }
+
+		.eyebrow .prompt {
+			color: var(--phosphor);
+		}
 
 		section h2 {
 			font-family: var(--mono);
@@ -240,7 +316,11 @@
 			font-weight: 400;
 		}
 
-		.service p { color: var(--fog); margin: 0; font-size: 0.97rem; }
+		.service p {
+			color: var(--fog);
+			margin: 0;
+			font-size: 0.97rem;
+		}
 
 		/* ---------- Portfolio ---------- */
 		.work-grid {
@@ -316,7 +396,9 @@
 			width: 100%;
 		}
 
-		dialog::backdrop { background: rgba(6, 8, 10, 0.8); }
+		dialog::backdrop {
+			background: rgba(6, 8, 10, 0.8);
+		}
 
 		.dialog-head {
 			display: flex;
@@ -344,10 +426,20 @@
 			padding: 0.35rem 0.7rem;
 			cursor: pointer;
 		}
-		.dialog-close:hover { color: var(--paper); border-color: var(--fog); }
 
-		.dialog-body { padding: 1.3rem; }
-		.dialog-body img { border: 1px solid var(--steel); border-radius: 6px; }
+		.dialog-close:hover {
+			color: var(--paper);
+			border-color: var(--fog);
+		}
+
+		.dialog-body {
+			padding: 1.3rem;
+		}
+
+		.dialog-body img {
+			border: 1px solid var(--steel);
+			border-radius: 6px;
+		}
 
 		.dialog-demo {
 			margin: 1.1rem 0 0;
@@ -355,7 +447,11 @@
 			font-size: 0.9rem;
 			color: var(--fog);
 		}
-		.dialog-demo a { font-weight: 600; }
+
+		.dialog-demo a {
+			font-weight: 600;
+		}
+
 		.dialog-demo code {
 			color: var(--paper);
 			background: var(--ink);
@@ -381,9 +477,16 @@
 			flex-shrink: 0;
 		}
 
-		.about-row .bio { flex: 1; min-width: 260px; }
+		.about-row .bio {
+			flex: 1;
+			min-width: 260px;
+		}
 
-		.about-row .bio p { color: var(--fog); margin: 0 0 1.2rem; max-width: 56ch; }
+		.about-row .bio p {
+			color: var(--fog);
+			margin: 0 0 1.2rem;
+			max-width: 56ch;
+		}
 
 		.role {
 			font-family: var(--mono);
@@ -413,8 +516,16 @@
 			transition: color 0.15s ease, border-color 0.15s ease;
 		}
 
-		.social a:hover { color: var(--phosphor); border-color: var(--phosphor); }
-		.social svg { width: 19px; height: 19px; fill: currentColor; }
+		.social a:hover {
+			color: var(--phosphor);
+			border-color: var(--phosphor);
+		}
+
+		.social svg {
+			width: 19px;
+			height: 19px;
+			fill: currentColor;
+		}
 
 		/* ---------- Contact ---------- */
 		.contact-list {
@@ -427,9 +538,17 @@
 			font-size: 0.95rem;
 		}
 
-		.contact-list .key { color: var(--fog); }
-		.contact-list .key::after { content: ":"; }
-		.contact-list .val { color: var(--paper); }
+		.contact-list .key {
+			color: var(--fog);
+		}
+
+		.contact-list .key::after {
+			content: ":";
+		}
+
+		.contact-list .val {
+			color: var(--paper);
+		}
 
 		/* ---------- Footer ---------- */
 		footer {
@@ -440,20 +559,45 @@
 			color: var(--fog);
 		}
 
-		footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+		footer .wrap {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+		}
 
 		/* ---------- Responsive ---------- */
 		@media (max-width: 560px) {
-			.site-nav ul { gap: 0.9rem; }
-			.hero { padding: 4.5rem 0 4rem; }
-			section { padding: 3.2rem 0; }
+			.site-nav ul {
+				gap: 0.9rem;
+			}
+
+			.hero {
+				padding: 4.5rem 0 4rem;
+			}
+
+			section {
+				padding: 3.2rem 0;
+			}
 		}
 
 		@media (prefers-reduced-motion: reduce) {
-			html { scroll-behavior: auto; }
-			.cursor { animation: none; }
-			.hero-output.reveal { animation: none; }
-			.work-card, .work-card:hover { transform: none; }
+			html {
+				scroll-behavior: auto;
+			}
+
+			.cursor {
+				animation: none;
+			}
+
+			.hero-output.reveal {
+				animation: none;
+			}
+
+			.work-card,
+			.work-card:hover {
+				transform: none;
+			}
 		}
 	</style>
 </head>
@@ -474,10 +618,12 @@
 
 	<header class="hero">
 		<div class="wrap">
-			<p class="term-line"><span class="prompt">ervin_beñez:~$</span> <span class="cmd" id="typedCmd">whoami</span><span class="cursor" aria-hidden="true"></span></p>
+			<p class="term-line"><span class="prompt">ervin_beñez:~$</span> <span class="cmd"
+					id="typedCmd">whoami</span><span class="cursor" aria-hidden="true"></span></p>
 			<div class="hero-output" id="heroOutput">
 				<h1>Ervin Beñez <span class="accent">—</span> web developer &amp; graphic artist.</h1>
-				<p class="lede">I build reliable web applications, cloud infrastructure, and clean visual design that help businesses reach their goals — from Koronadal City, Philippines.</p>
+				<p class="lede">I build reliable web applications, cloud infrastructure, and clean visual design that
+					help businesses reach their goals — from Koronadal City, Philippines.</p>
 				<div class="btn-row">
 					<a class="btn btn-primary" href="#work">View work</a>
 					<a class="btn" href="#contact">Get in touch</a>
@@ -492,19 +638,23 @@
 			<div class="wrap">
 				<p class="eyebrow">~/services <span class="prompt">$</span> ls</p>
 				<h2>What I do</h2>
-				<p class="section-intro">I understand your business and its goals, and I apply my skills and expertise to make sure your website or web application helps you reach them.</p>
+				<p class="section-intro">I understand your business and its goals, and I apply my skills and expertise
+					to make sure your website or web application helps you reach them.</p>
 				<div class="services-grid">
 					<div class="service">
 						<h3>Web Development</h3>
-						<p>I build reliable, scalable web applications using modern frameworks and best practices, focusing on performance, maintainability, and real business needs.</p>
+						<p>I build reliable, scalable web applications using modern frameworks and best practices,
+							focusing on performance, maintainability, and real business needs.</p>
 					</div>
 					<div class="service">
 						<h3>Cloud Infrastructure &amp; DevOps</h3>
-						<p>I design and manage cloud infrastructure with automated deployments, monitoring, and scaling to keep applications secure, stable, and production-ready.</p>
+						<p>I design and manage cloud infrastructure with automated deployments, monitoring, and scaling
+							to keep applications secure, stable, and production-ready.</p>
 					</div>
 					<div class="service">
 						<h3>Graphic Design</h3>
-						<p>I create clean, minimal visual designs that prioritize clarity and usability, helping products communicate effectively without unnecessary visual complexity.</p>
+						<p>I create clean, minimal visual designs that prioritize clarity and usability, helping
+							products communicate effectively without unnecessary visual complexity.</p>
 					</div>
 				</div>
 			</div>
@@ -517,50 +667,63 @@
 				<h2>Selected work</h2>
 				<p class="section-intro">Projects I've designed and built. Select one to take a closer look.</p>
 				<div class="work-grid">
-					<button class="work-card" type="button"
-						data-img="img/portfolio/clinic_pro.png"
+					<button class="work-card" type="button" data-img="img/portfolio/clinic_pro.png"
 						data-title="Clinic Management System (Demo App)"
-						data-demo="https://cms-react-main.laravel.cloud/"
-						data-username="admin@email.com"
+						data-demo="https://cms-react-main.laravel.cloud/" data-username="admin@email.com"
 						data-password="password">
-						<span class="shot"><img src="img/portfolio/clinic_pro.png" alt="Clinic Management System screenshot" loading="lazy"></span>
-						<span class="meta"><h3>Clinic Management System</h3><span class="open">live demo ↗</span></span>
+						<span class="shot"><img src="img/portfolio/clinic_pro.png"
+								alt="Clinic Management System screenshot" loading="lazy"></span>
+						<span class="meta">
+							<h3>Clinic Management System</h3><span class="open">live demo ↗</span>
+						</span>
 					</button>
-					<button class="work-card" type="button"
-						data-img="img/portfolio/nucleus-solar-home.png"
+					<button class="work-card" type="button" data-img="img/portfolio/nucleus-solar-home.png"
 						data-title="Nucleus Solar CRM">
-						<span class="shot"><img src="img/portfolio/nucleus-solar-home.png" alt="Nucleus Solar CRM screenshot" loading="lazy"></span>
-						<span class="meta"><h3>Nucleus Solar CRM</h3><span class="open">view</span></span>
+						<span class="shot"><img src="img/portfolio/nucleus-solar-home.png"
+								alt="Nucleus Solar CRM screenshot" loading="lazy"></span>
+						<span class="meta">
+							<h3>Nucleus Solar CRM</h3><span class="open">view</span>
+						</span>
 					</button>
-					<button class="work-card" type="button"
-						data-img="img/portfolio/snap-raise-manage.png"
+					<button class="work-card" type="button" data-img="img/portfolio/snap-raise-manage.png"
 						data-title="Snap! Raise | Manage">
-						<span class="shot"><img src="img/portfolio/snap-raise-manage.png" alt="Snap! Raise Manage screenshot" loading="lazy"></span>
-						<span class="meta"><h3>Snap! Raise | Manage</h3><span class="open">view</span></span>
+						<span class="shot"><img src="img/portfolio/snap-raise-manage.png"
+								alt="Snap! Raise Manage screenshot" loading="lazy"></span>
+						<span class="meta">
+							<h3>Snap! Raise | Manage</h3><span class="open">view</span>
+						</span>
 					</button>
-					<button class="work-card" type="button"
-						data-img="img/portfolio/rmis.jpg"
+					<button class="work-card" type="button" data-img="img/portfolio/rmis.jpg"
 						data-title="Rice Mill Information System">
-						<span class="shot"><img src="img/portfolio/rmis.jpg" alt="Rice Mill Information System screenshot" loading="lazy"></span>
-						<span class="meta"><h3>Rice Mill Information System</h3><span class="open">view</span></span>
+						<span class="shot"><img src="img/portfolio/rmis.jpg"
+								alt="Rice Mill Information System screenshot" loading="lazy"></span>
+						<span class="meta">
+							<h3>Rice Mill Information System</h3><span class="open">view</span>
+						</span>
 					</button>
-					<button class="work-card" type="button"
-						data-img="img/portfolio/wms.png"
+					<button class="work-card" type="button" data-img="img/portfolio/wms.png"
 						data-title="Warehouse Management System">
-						<span class="shot"><img src="img/portfolio/wms.png" alt="Warehouse Management System screenshot" loading="lazy"></span>
-						<span class="meta"><h3>Warehouse Management System</h3><span class="open">view</span></span>
+						<span class="shot"><img src="img/portfolio/wms.png" alt="Warehouse Management System screenshot"
+								loading="lazy"></span>
+						<span class="meta">
+							<h3>Warehouse Management System</h3><span class="open">view</span>
+						</span>
 					</button>
-					<button class="work-card" type="button"
-						data-img="img/portfolio/sp.png"
+					<button class="work-card" type="button" data-img="img/portfolio/sp.png"
 						data-title="NDMU Student Portal">
-						<span class="shot"><img src="img/portfolio/sp.png" alt="NDMU Student Portal screenshot" loading="lazy"></span>
-						<span class="meta"><h3>NDMU Student Portal</h3><span class="open">view</span></span>
+						<span class="shot"><img src="img/portfolio/sp.png" alt="NDMU Student Portal screenshot"
+								loading="lazy"></span>
+						<span class="meta">
+							<h3>NDMU Student Portal</h3><span class="open">view</span>
+						</span>
 					</button>
-					<button class="work-card" type="button"
-						data-img="img/portfolio/eased.png"
+					<button class="work-card" type="button" data-img="img/portfolio/eased.png"
 						data-title="EASED System">
-						<span class="shot"><img src="img/portfolio/eased.png" alt="EASED System screenshot" loading="lazy"></span>
-						<span class="meta"><h3>EASED System</h3><span class="open">view</span></span>
+						<span class="shot"><img src="img/portfolio/eased.png" alt="EASED System screenshot"
+								loading="lazy"></span>
+						<span class="meta">
+							<h3>EASED System</h3><span class="open">view</span>
+						</span>
 					</button>
 				</div>
 			</div>
@@ -575,23 +738,43 @@
 					<img class="portrait" src="img/ervin.jpg" alt="Portrait of Ervin Beñez" loading="lazy">
 					<div class="bio">
 						<p class="role">Web Developer / Graphic Artist</p>
-						<p>Hi, I'm Ervin P. Beñez — a web developer and graphic artist from the Philippines. You can find me on these platforms:</p>
+						<p>Hi, I'm Ervin P. Beñez — a web developer and graphic artist from the Philippines. You can
+							find me on these platforms:</p>
 						<ul class="social">
-							<li><a href="https://github.com/ervinbenez" target="_blank" rel="noopener" aria-label="GitHub">
-								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11.04 11.04 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
-							</a></li>
-							<li><a href="https://www.linkedin.com/in/ervin-be%C3%B1ez-b2394410a" target="_blank" rel="noopener" aria-label="LinkedIn">
-								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
-							</a></li>
-							<li><a href="https://www.behance.net/ervin_benez" target="_blank" rel="noopener" aria-label="Behance">
-								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.13 11.22c.7-.34 1.23-1.06 1.23-2.23 0-2.33-1.74-2.9-3.74-2.9H1v11.7h5.82c2.19 0 4.25-1.05 4.25-3.5 0-1.51-.72-2.63-1.94-3.07zM3.57 8.19h2.48c.95 0 1.81.27 1.81 1.38 0 1.02-.67 1.43-1.62 1.43H3.57V8.19zm2.82 7.51H3.57v-3.3h2.87c1.16 0 1.9.48 1.9 1.71 0 1.21-.88 1.59-1.95 1.59zM21.44 8.05h-4.9V6.86h4.9v1.19zM23 13.58c0-2.51-1.47-4.6-4.12-4.6-2.58 0-4.33 1.94-4.33 4.48 0 2.64 1.66 4.44 4.33 4.44 2.02 0 3.33-.91 3.96-2.84h-2.07c-.22.73-.95 1.11-1.82 1.11-1.35 0-2.06-.79-2.06-2.13H23v-.46zm-6.1-1.02c.07-1.1.81-1.78 1.91-1.78 1.16 0 1.74.68 1.84 1.78h-3.75z"/></svg>
-							</a></li>
-							<li><a href="https://www.facebook.com/ervin.benez" target="_blank" rel="noopener" aria-label="Facebook">
-								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg>
-							</a></li>
+							<li><a href="https://github.com/ervinbenez" target="_blank" rel="noopener"
+									aria-label="GitHub">
+									<svg viewBox="0 0 24 24" aria-hidden="true">
+										<path
+											d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11.04 11.04 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z" />
+									</svg>
+								</a></li>
+							<li><a href="https://www.linkedin.com/in/ervin-be%C3%B1ez-b2394410a" target="_blank"
+									rel="noopener" aria-label="LinkedIn">
+									<svg viewBox="0 0 24 24" aria-hidden="true">
+										<path
+											d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z" />
+									</svg>
+								</a></li>
+							<li><a href="https://www.behance.net/ervin_benez" target="_blank" rel="noopener"
+									aria-label="Behance">
+									<svg viewBox="0 0 24 24" aria-hidden="true">
+										<path
+											d="M9.13 11.22c.7-.34 1.23-1.06 1.23-2.23 0-2.33-1.74-2.9-3.74-2.9H1v11.7h5.82c2.19 0 4.25-1.05 4.25-3.5 0-1.51-.72-2.63-1.94-3.07zM3.57 8.19h2.48c.95 0 1.81.27 1.81 1.38 0 1.02-.67 1.43-1.62 1.43H3.57V8.19zm2.82 7.51H3.57v-3.3h2.87c1.16 0 1.9.48 1.9 1.71 0 1.21-.88 1.59-1.95 1.59zM21.44 8.05h-4.9V6.86h4.9v1.19zM23 13.58c0-2.51-1.47-4.6-4.12-4.6-2.58 0-4.33 1.94-4.33 4.48 0 2.64 1.66 4.44 4.33 4.44 2.02 0 3.33-.91 3.96-2.84h-2.07c-.22.73-.95 1.11-1.82 1.11-1.35 0-2.06-.79-2.06-2.13H23v-.46zm-6.1-1.02c.07-1.1.81-1.78 1.91-1.78 1.16 0 1.74.68 1.84 1.78h-3.75z" />
+									</svg>
+								</a></li>
+							<li><a href="https://www.facebook.com/ervin.benez" target="_blank" rel="noopener"
+									aria-label="Facebook">
+									<svg viewBox="0 0 24 24" aria-hidden="true">
+										<path
+											d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z" />
+									</svg>
+								</a></li>
 							<li><a href="https://m.me/ervinbenez" target="_blank" rel="noopener" aria-label="Messenger">
-								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.24 0 0 4.95 0 11.64c0 3.5 1.43 6.52 3.77 8.61.2.17.31.43.32.7l.07 2.14a.96.96 0 0 0 1.35.85l2.38-1.05c.2-.09.43-.11.64-.05 1.1.3 2.26.46 3.47.46 6.76 0 12-4.95 12-11.66C24 4.95 18.76 0 12 0zm7.21 8.97l-3.53 5.6a1.8 1.8 0 0 1-2.6.48l-2.8-2.1a.72.72 0 0 0-.87 0l-3.79 2.87c-.5.38-1.16-.22-.83-.75l3.53-5.6a1.8 1.8 0 0 1 2.6-.48l2.8 2.1c.26.2.61.2.87 0l3.79-2.87c.5-.38 1.16.22.83.75z"/></svg>
-							</a></li>
+									<svg viewBox="0 0 24 24" aria-hidden="true">
+										<path
+											d="M12 0C5.24 0 0 4.95 0 11.64c0 3.5 1.43 6.52 3.77 8.61.2.17.31.43.32.7l.07 2.14a.96.96 0 0 0 1.35.85l2.38-1.05c.2-.09.43-.11.64-.05 1.1.3 2.26.46 3.47.46 6.76 0 12-4.95 12-11.66C24 4.95 18.76 0 12 0zm7.21 8.97l-3.53 5.6a1.8 1.8 0 0 1-2.6.48l-2.8-2.1a.72.72 0 0 0-.87 0l-3.79 2.87c-.5.38-1.16-.22-.83-.75l3.53-5.6a1.8 1.8 0 0 1 2.6-.48l2.8 2.1c.26.2.61.2.87 0l3.79-2.87c.5-.38 1.16.22.83.75z" />
+									</svg>
+								</a></li>
 						</ul>
 					</div>
 				</div>
@@ -605,10 +788,13 @@
 				<h2>Contact me</h2>
 				<p class="section-intro">Send me your inquiries and we'll talk as soon as I receive your message.</p>
 				<ul class="contact-list">
-					<li><span class="key">email</span> <a class="val" href="mailto:ervinbenez@gmail.com">ervinbenez@gmail.com</a></li>
+					<li><span class="key">email</span> <a class="val"
+							href="mailto:ervinbenez@gmail.com">ervinbenez@gmail.com</a></li>
 					<li><span class="key">skype</span> <span class="val">ervinbenez_1</span></li>
-					<li><span class="key">mobile</span> <a class="val" href="tel:+639177773047">+63 917 777 3047</a></li>
-					<li><span class="key">location</span> <span class="val">Koronadal City, South Cotabato, Philippines 9506</span></li>
+					<li><span class="key">mobile</span> <a class="val" href="tel:+639177773047">+63 917 777 3047</a>
+					</li>
+					<li><span class="key">location</span> <span class="val">Koronadal City, South Cotabato, Philippines
+							9506</span></li>
 				</ul>
 			</div>
 		</section>
